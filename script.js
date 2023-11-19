@@ -162,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var grp17 = document.getElementById('grp17');
 
   // Function to create and append alkali elements
+
   function createAlkaliElement(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' alkali';
