@@ -1,0 +1,51 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+
+    .table {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 5px;
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .tiles {
+                background-color: rgba($color: #000000, $alpha: 0.4);
+                width: 60px;
+                height: 60px;
+                border: 2px solid black;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                transition: 0.1s all ease-in-out;
+                cursor: default;
+
+                &:hover {
+                    scale: 1.25;
+                    z-index: 999;
+                    background-color: rgba($color: #000000, $alpha: 1);
+                }
+
+                .number {
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                }
+            }
+        }
+    }
+}
