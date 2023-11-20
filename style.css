@@ -20,6 +20,21 @@ html {
   scale: 1.25;
   z-index: 999;
   background-color: black;
+  animation: 1s breathingAnim infinite linear alternate;
+}
+@keyframes breathingAnim {
+  0% {
+    scale: 1.25;
+    transform: rotate(0.01turn);
+  }
+  50% {
+    scale: 1.15;
+    transform: rotate(0turn);
+  }
+  100% {
+    scale: 1.25;
+    transform: rotate(-0.01turn);
+  }
 }
 .tiles .number {
   position: absolute;
@@ -36,6 +51,17 @@ body {
   align-items: center;
   background-color: black;
   color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body h1 {
+  margin-block: 10px 0;
+}
+body p {
+  margin: 0;
+}
+body p a {
+  color: aqua;
+  text-decoration: none;
 }
 body .table {
   display: flex;
