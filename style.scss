@@ -1,9 +1,37 @@
 html {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+.tiles {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    min-width: 60px;
+    height: 60px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.1s all ease-in-out;
+    cursor: default;
+
+    &:hover {
+        scale: 1.25;
+        z-index: 999;
+        background-color: rgba($color: #000000, $alpha: 1);
+    }
+
+    .number {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+    }
 }
 
 body {
+    width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,36 +44,44 @@ body {
         flex-direction: row;
         align-items: flex-end;
         gap: 5px;
+        margin-bottom: 20px;
 
         .group {
             display: flex;
             flex-direction: column;
             gap: 5px;
+        }
+    }
 
-            .tiles {
-                background-color: rgba($color: #000000, $alpha: 0.4);
-                width: 60px;
-                height: 60px;
-                border: 2px solid black;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-end;
-                transition: 0.1s all ease-in-out;
-                cursor: default;
+    .table2{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
-                &:hover {
-                    scale: 1.25;
-                    z-index: 999;
-                    background-color: rgba($color: #000000, $alpha: 1);
-                }
+        .t2Ele{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+    }
+}
 
-                .number {
-                    position: absolute;
-                    top: 2px;
-                    left: 2px;
-                }
-            }
+@media (max-width:1237px) {
+    body{
+        .table{
+            width: 95%;
+            padding: 10px 25px;
+            overflow-x: auto;
+        }
+    }
+}
+
+@media (max-width:1000px) {
+    body{
+        .table2{
+            width: 95%;
+            padding: 10px 25px;
+            overflow-x: auto;
         }
     }
 }

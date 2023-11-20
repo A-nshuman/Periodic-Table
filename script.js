@@ -143,6 +143,40 @@ document.addEventListener('DOMContentLoaded', () => {
     { number: '118', symbol: 'Og', name: 'Oganesson', mass: '(295)' }
   ];
 
+  var lanthanoids = [
+    { number: 58, symbol: 'Ce', name: 'Cerium', mass: '140.116' },
+    { number: 59, symbol: 'Pr', name: 'Praseodymium', mass: '140.90765' },
+    { number: 60, symbol: 'Nd', name: 'Neodymium', mass: '144.242' },
+    { number: 61, symbol: 'Pm', name: 'Promethium', mass: '(147)' },
+    { number: 62, symbol: 'Sm', name: 'Samarium', mass: '150.36' },
+    { number: 63, symbol: 'Eu', name: 'Europium', mass: '151.965' },
+    { number: 64, symbol: 'Gd', name: 'Gadolinium', mass: '157.253' },
+    { number: 65, symbol: 'Tb', name: 'Terbium', mass: '158.92535' },
+    { number: 66, symbol: 'Dy', name: 'Dysprosium', mass: '162.500' },
+    { number: 67, symbol: 'Ho', name: 'Holmium', mass: '164.93032' },
+    { number: 68, symbol: 'Er', name: 'Erbium', mass: '167.259' },
+    { number: 69, symbol: 'Tm', name: 'Thulium', mass: '168.93422' },
+    { number: 70, symbol: 'Yb', name: 'Ytterbium', mass: '173.045' },
+    { number: 71, symbol: 'Lu', name: 'Lutetium', mass: '174.967' }
+  ];
+
+  var actinoids = [
+    { number: 90, symbol: 'Th', name: 'Thorium', mass: '232.03806' },
+    { number: 91, symbol: 'Pa', name: 'Protactinium', mass: '231.03588' },
+    { number: 92, symbol: 'U', name: 'Uranium', mass: '238.02891' },
+    { number: 93, symbol: 'Np', name: 'Neptunium', mass: '(237)' },
+    { number: 94, symbol: 'Pu', name: 'Plutonium', mass: '(242)' },
+    { number: 95, symbol: 'Am', name: 'Americium', mass: '(243)' },
+    { number: 96, symbol: 'Cm', name: 'Curium', mass: '(247)' },
+    { number: 97, symbol: 'Bk', name: 'Berkelium', mass: '(247)' },
+    { number: 98, symbol: 'Cf', name: 'Californium', mass: '(251)' },
+    { number: 99, symbol: 'Es', name: 'Einsteinium', mass: '(252)' },
+    { number: 100, symbol: 'Fm', name: 'Fermium', mass: '(257)' },
+    { number: 101, symbol: 'Md', name: 'Mendelevium', mass: '(258)' },
+    { number: 102, symbol: 'No', name: 'Nobelium', mass: '(259)' },
+    { number: 103, symbol: 'Lr', name: 'Lawrencium', mass: '(262)' }
+  ];  
+
   var grp1 = document.getElementById('grp1');
   var grp2 = document.getElementById('grp2');
   var grp3 = document.getElementById('grp3');
@@ -161,6 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
   var grp16 = document.getElementById('grp16');
   var grp17 = document.getElementById('grp17');
   var grp18 = document.getElementById('grp18');
+  var lanth = document.getElementById('lan');
+  var actin = document.getElementById('act');
 
   // Function to create and append alkali elements
 
@@ -444,6 +480,34 @@ document.addEventListener('DOMContentLoaded', () => {
     grp18.appendChild(newElement);
   }
 
+  function createLanthElement(data, index) {
+    var newElement = document.createElement('div');
+    newElement.className = 'tiles prd' + (index + 6) + ' lanth';
+
+    ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
+      var childElement = document.createElement('div');
+      childElement.className = property;
+      childElement.textContent = data[property];
+      newElement.appendChild(childElement);
+    });
+
+    lanth.appendChild(newElement);
+  }
+
+  function createActinElement(data, index) {
+    var newElement = document.createElement('div');
+    newElement.className = 'tiles prd' + (index + 7) + ' actin';
+
+    ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
+      var childElement = document.createElement('div');
+      childElement.className = property;
+      childElement.textContent = data[property];
+      newElement.appendChild(childElement);
+    });
+
+    actin.appendChild(newElement);
+  }
+
   // Create and append alkali elements using the sample data
   alkaliElements.forEach(function (elementData, index) {
     createAlkaliElement(elementData, index);
@@ -517,6 +581,14 @@ document.addEventListener('DOMContentLoaded', () => {
     createGroup18Element(elementData, index);
   });
 
+  lanthanoids.forEach(function (elementData, index) {
+    createLanthElement(elementData, index);
+  });
+
+  actinoids.forEach(function (elementData, index) {
+    createActinElement(elementData, index);
+  });
+
   const alkali = document.querySelectorAll('.alkali');
   const alkaline = document.querySelectorAll('.alkaline');
   const grp3Ele = document.querySelectorAll('.grp3Ele');
@@ -535,6 +607,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const grp16Ele = document.querySelectorAll('.grp16Ele');
   const grp17Ele = document.querySelectorAll('.grp17Ele');
   const grp18Ele = document.querySelectorAll('.grp18Ele');
+  const lanthEle = document.querySelectorAll('.lanth');
+  const actinEle = document.querySelectorAll('.actin');
   const other = document.querySelectorAll('.other');
 
   const number = document.querySelectorAll('.number');
@@ -566,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  tileColor(other, 'greenyellow')
+  tileColor(other, 'aquamarine')
   tileColor(alkali, 'crimson')
   tileColor(alkaline, 'yellow')
   tileColor(grp3Ele, 'rgb(225, 119, 34)')
@@ -585,6 +659,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tileColor(grp16Ele, 'lime')
   tileColor(grp17Ele, 'greenyellow')
   tileColor(grp18Ele, 'cyan')
+  tileColor(lanthEle, 'blue')
+  tileColor(actinEle, 'brown')
 
   var forAquamarine = ['B', 'C', 'N', 'O', 'Si', 'P', 'S', 'As', 'Se', 'Te']
   var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Ge', 'Sn', 'Pb', 'Fl', 'Sb', 'Bi', 'Mc', 'Po', 'Lv']
