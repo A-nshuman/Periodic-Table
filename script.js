@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { number: '34', symbol: 'Se', name: 'Selenium', mass: '78.97' },
     { number: '52', symbol: 'Te', name: 'Tellurium', mass: '127.60' },
     { number: '84', symbol: 'Po', name: 'Polonium', mass: '(209)' },
-    { number: '114', symbol: 'Fl', name: 'Flerovium', mass: '(289)' }
+    { number: '116', symbol: 'Lv', name: 'Livermorium', mass: '(293)' }
   ];
 
   var group17Elements = [
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { number: '35', symbol: 'Br', name: 'Bromine', mass: '79.90' },
     { number: '53', symbol: 'I', name: 'Iodine', mass: '126.90' },
     { number: '85', symbol: 'At', name: 'Astatine', mass: '210.00' },
-    { number: '115', symbol: 'Mc', name: 'Moscovium', mass: '(290)' }
+    { number: '117', symbol: 'Ts', name: 'Tennessine', mass: '(294)' }
   ];
 
   var group18Elements = [
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { number: '36', symbol: 'Kr', name: 'Krypton', mass: '83.80' },
     { number: '54', symbol: 'Xe', name: 'Xenon', mass: '131.29' },
     { number: '86', symbol: 'Rn', name: 'Radon', mass: '222.00' },
-    { number: '116', symbol: 'Lv', name: 'Livermorium', mass: '(293)' }
+    { number: '118', symbol: 'Og', name: 'Oganesson', mass: '(295)' }
   ];
 
   var grp1 = document.getElementById('grp1');
@@ -168,16 +168,16 @@ document.addEventListener('DOMContentLoaded', () => {
   //   window[fName] = function(data, index) {
   //     var newElement = document.createElement('div');
   //     newElement.className = `tiles prd${index + indexNo} ${clsName}`;
-  
+
   //     ['number', 'symbol', 'name', 'mass'].forEach(function(property) {
   //       var childElement = document.createElement('div');
   //       childElement.className = property;
   //       childElement.textContent = data[property];
   //       newElement.appendChild(childElement);
   //     });
-  
+
   //     console.log("Attempting to append to:", grpName);
-      
+
   //     // Ensure that grpName is a valid DOM element
   //     if (grpName instanceof Element) {
   //       grpName.appendChild(newElement);
@@ -223,224 +223,224 @@ document.addEventListener('DOMContentLoaded', () => {
   function createGroup3Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp3Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp3.appendChild(newElement);
   }
 
   function createGroup4Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp4Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp4.appendChild(newElement);
   }
 
   function createGroup5Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp5Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp5.appendChild(newElement);
   }
 
   function createGroup6Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp6Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp6.appendChild(newElement);
   }
 
   function createGroup7Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp7Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp7.appendChild(newElement);
   }
 
   function createGroup8Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp8Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp8.appendChild(newElement);
   }
 
   function createGroup9Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp9Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp9.appendChild(newElement);
   }
 
   function createGroup10Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp10Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp10.appendChild(newElement);
   }
 
   function createGroup11Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp11Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp11.appendChild(newElement);
   }
 
   function createGroup12Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 4) + ' grp12Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp12.appendChild(newElement);
   }
 
   function createGroup13Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' grp13Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp13.appendChild(newElement);
   }
 
   function createGroup14Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' grp14Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp14.appendChild(newElement);
   }
 
   function createGroup15Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' grp15Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp15.appendChild(newElement);
   }
 
   function createGroup16Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' grp16Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp16.appendChild(newElement);
   }
 
   function createGroup17Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' grp17Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp17.appendChild(newElement);
   }
 
   function createGroup18Element(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 1) + ' grp18Ele';
-  
+
     ['number', 'symbol', 'name', 'mass'].forEach(function (property) {
       var childElement = document.createElement('div');
       childElement.className = property;
       childElement.textContent = data[property];
       newElement.appendChild(childElement);
     });
-  
+
     grp18.appendChild(newElement);
   }
 
@@ -540,7 +540,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const number = document.querySelectorAll('.number');
   const mass = document.querySelectorAll('.mass');
   const name = document.querySelectorAll('.name');
-  // const symbol = document.querySelectorAll('.symbol');
   const tiles = document.querySelectorAll('.tiles');
 
   function tileColor(grpName, color) {
@@ -550,12 +549,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  function indColor(sym, color) {
+  function indColor(symbols, color) {
     tiles.forEach(tile => {
       const symbol = tile.querySelector('.symbol');
   
-      if (symbol.textContent === sym) {
-        tile.style.borderColor = `${color}`;
+      if (symbols.includes(symbol.textContent)) {
+        tile.style.borderColor = color;
         tile.style.filter = `drop-shadow(0 0 5px ${color})`;
       }
     });
@@ -566,8 +565,6 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.fontSize = `${fontSize}`;
     });
   }
-
-  indColor('Si', 'aquamarine');
 
   tileColor(other, 'greenyellow')
   tileColor(alkali, 'crimson')
@@ -588,6 +585,12 @@ document.addEventListener('DOMContentLoaded', () => {
   tileColor(grp16Ele, 'lime')
   tileColor(grp17Ele, 'greenyellow')
   tileColor(grp18Ele, 'cyan')
+
+  var forAquamarine = ['B', 'C', 'N', 'O', 'Si', 'P', 'S', 'As', 'Se', 'Te']
+  var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Ge', 'Sn', 'Pb', 'Fl', 'Sb', 'Bi', 'Mc', 'Po', 'Lv']
+  
+  indColor(forAquamarine, 'aquamarine');
+  indColor(forLime, 'lime');
 
   fontS(number, '12px')
   fontS(mass, '12px')
