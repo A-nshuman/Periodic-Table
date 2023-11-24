@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { number: 101, symbol: 'Md', name: 'Mendelevium', mass: '(258)' },
     { number: 102, symbol: 'No', name: 'Nobelium', mass: '(259)' },
     { number: 103, symbol: 'Lr', name: 'Lawrencium', mass: '(262)' }
-  ];  
+  ];
 
   var grp1 = document.getElementById('grp1');
   var grp2 = document.getElementById('grp2');
@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function indColor(symbols, color) {
     tiles.forEach(tile => {
       const symbol = tile.querySelector('.symbol');
-  
+
       if (symbols.includes(symbol.textContent)) {
         tile.style.borderColor = color;
         tile.style.filter = `drop-shadow(0 0 5px ${color})`;
@@ -640,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  tileColor(other, 'aquamarine')
+  tileColor(other, 'greenyellow')
   tileColor(alkali, 'crimson')
   tileColor(alkaline, 'yellow')
   tileColor(grp3Ele, 'rgb(225, 119, 34)')
@@ -654,50 +654,46 @@ document.addEventListener('DOMContentLoaded', () => {
   tileColor(grp11Ele, 'rgb(225, 119, 34)')
   tileColor(grp12Ele, 'rgb(225, 119, 34)')
   tileColor(grp13Ele, 'aquamarine')
-  tileColor(grp14Ele, 'rgb(225, 119, 34)')
-  tileColor(grp15Ele, 'rgb(225, 119, 34)')
-  tileColor(grp16Ele, 'lime')
+  tileColor(grp14Ele, 'greenyellow')
+  tileColor(grp15Ele, 'greenyellow')
+  tileColor(grp16Ele, 'greenyellow')
   tileColor(grp17Ele, 'greenyellow')
   tileColor(grp18Ele, 'cyan')
   tileColor(lanthEle, 'blue')
   tileColor(actinEle, 'brown')
 
-  var forAquamarine = ['B', 'C', 'N', 'O', 'Si', 'P', 'S', 'As', 'Se', 'Te']
-  var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Ge', 'Sn', 'Pb', 'Fl', 'Sb', 'Bi', 'Mc', 'Po', 'Lv']
+  var forAquamarine = ['B', 'Si', 'Ge', 'As', 'Sb', 'Te', 'At']
+  var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Sn', 'Pb', 'Fl', 'Bi', 'Mc', 'Po', 'Lv']
   var unknown = ['Mt', 'Ds', 'Rg', 'Nh', 'Mc', 'Lv', 'Ts', 'Og']
-  
-  // const box = document.querySelectorAll('.box');
-  // const text = document.querySelector('.text');
-  
-  // function boxColor(key, color) { 
-  //   box.forEach(element => {
-  //     if (text.textContent === key) {
-  //       element.style.borderColor = color;
-  //       element.style.filter = `drop-shadow(0 0 5px ${color})`;
-  //     }
-  //   });
-  // }
 
-  // boxColor('Alkali Metals', 'white');
-  // boxColor('Alkaline Earth Metals', 'yellow');
-  // boxColor('Unknown', 'blue');
+  const AlkaliK = document.querySelector('.AlkaliKBox');
+  const AlkalineKBox = document.querySelector('.AlkalineKBox');
+  const LanthanoidsKBox = document.querySelector('.LanthanoidsKBox');
+  const ActinoidsKBox = document.querySelector('.ActinoidsKBox');
+  const TransitionKBox = document.querySelector('.TransitionKBox');
+  const PostTransitionKBox = document.querySelector('.PostTransitionKBox');
+  const MetalloidsKBox = document.querySelector('.MetalloidsKBox');
+  const othMetalsKBox = document.querySelector('.othNonMetalKBox');
+  const NobleGasesKBox = document.querySelector('.NobleGasKBox');
+  const UnknownKBox = document.querySelector('.UnknownKBox');
 
-  const AlkaliKBox = document.querySelector('.AlkaliKBox'); 
-  const AlkalineKBox = document.getElementsByClassName('AlkalineKBox');
-  const LanthanoidsKBox = document.getElementsByClassName('LanthanoidsKBox');
-  const ActinoidsKBox = document.getElementsByClassName('ActinoidsKBox');
-  const TransitionKBox = document.getElementsByClassName('TransitionKBox');
-  const PostTransitionKBox = document.getElementsByClassName('PostTransitionKBox');
-  const MetalloidsKBox = document.getElementsByClassName('MetalloidsKBox');
-  const othMetalsKBox = document.getElementsByClassName('othMetalsKBox');
-  const NobleGasesKBox = document.getElementsByClassName('NobleGasesKBox');
-  const UnknownKBox = document.getElementsByClassName('UnknownKBox');
+  function boxColor(key, color) {
+    key.style.borderColor = color;
+    key.style.filter = `drop-shadow(0 0 5px ${color})`;
+  }
 
-  indColor(AlkaliKBox, 'white')
+  boxColor(AlkaliK, 'crimson');
+  boxColor(AlkalineKBox, 'yellow');
+  boxColor(LanthanoidsKBox, 'blue');
+  boxColor(ActinoidsKBox, 'brown');
+  boxColor(TransitionKBox, 'rgb(225, 119, 34)');
+  boxColor(PostTransitionKBox, 'lime');
+  boxColor(MetalloidsKBox, 'lightskyblue');
+  boxColor(othMetalsKBox, 'greenyellow');
+  boxColor(NobleGasesKBox, 'cyan');
+  boxColor(UnknownKBox, 'gray');
 
-  // document.getElementsByClassName('AlkaliKBox').style.borderColor = 'green';
-  
-  indColor(forAquamarine, 'aquamarine');
+  indColor(forAquamarine, 'lightskyblue');
   indColor(forLime, 'lime');
   indColor(unknown, 'gray');
 
