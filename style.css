@@ -2,6 +2,9 @@ html {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .tiles {
@@ -84,6 +87,27 @@ body .table2 .t2Ele {
   display: flex;
   flex-direction: row;
   gap: 5px;
+}
+body .menu .key {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  z-index: 999;
+  top: 20px;
+  right: 20px;
+}
+body .menu .key .k {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+body .menu .key .k .box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  filter: drop-shadow(0 0 5px red);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1237px) {

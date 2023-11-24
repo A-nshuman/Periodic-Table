@@ -664,9 +664,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   var forAquamarine = ['B', 'C', 'N', 'O', 'Si', 'P', 'S', 'As', 'Se', 'Te']
   var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Ge', 'Sn', 'Pb', 'Fl', 'Sb', 'Bi', 'Mc', 'Po', 'Lv']
+  var unknown = ['Mt', 'Ds', 'Rg', 'Nh', 'Mc', 'Lv', 'Ts', 'Og']
+  
+  // const box = document.querySelectorAll('.box');
+  // const text = document.querySelector('.text');
+  
+  // function boxColor(key, color) { 
+  //   box.forEach(element => {
+  //     if (text.textContent === key) {
+  //       element.style.borderColor = color;
+  //       element.style.filter = `drop-shadow(0 0 5px ${color})`;
+  //     }
+  //   });
+  // }
+
+  // boxColor('Alkali Metals', 'white');
+  // boxColor('Alkaline Earth Metals', 'yellow');
+  // boxColor('Unknown', 'blue');
+
+  const AlkaliKBox = document.querySelector('.AlkaliKBox'); 
+  const AlkalineKBox = document.getElementsByClassName('AlkalineKBox');
+  const LanthanoidsKBox = document.getElementsByClassName('LanthanoidsKBox');
+  const ActinoidsKBox = document.getElementsByClassName('ActinoidsKBox');
+  const TransitionKBox = document.getElementsByClassName('TransitionKBox');
+  const PostTransitionKBox = document.getElementsByClassName('PostTransitionKBox');
+  const MetalloidsKBox = document.getElementsByClassName('MetalloidsKBox');
+  const othMetalsKBox = document.getElementsByClassName('othMetalsKBox');
+  const NobleGasesKBox = document.getElementsByClassName('NobleGasesKBox');
+  const UnknownKBox = document.getElementsByClassName('UnknownKBox');
+
+  indColor(AlkaliKBox, 'white')
+
+  // document.getElementsByClassName('AlkaliKBox').style.borderColor = 'green';
   
   indColor(forAquamarine, 'aquamarine');
   indColor(forLime, 'lime');
+  indColor(unknown, 'gray');
 
   fontS(number, '12px')
   fontS(mass, '12px')
