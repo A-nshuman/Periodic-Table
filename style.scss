@@ -236,7 +236,20 @@ body {
 }
 
 @media (max-width:1237px) {
+    .tiles{
+        max-width: 50px;
+        height: 50px;
+        .number{
+            font-size: 10px;
+        }
+    }
+
     body {
+        align-items: flex-start;
+
+        h1, p{
+            margin-inline-start: 25px;
+        }
         .table {
             width: 95%;
             padding: 10px 25px;

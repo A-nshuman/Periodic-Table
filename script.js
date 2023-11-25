@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
   indColor(forLime, 'lime');
   indColor(unknown, 'gray');
 
-  fontS(number, '12px')
+  fontS(number, '11px')
   fontS(mass, '12px')
   fontS(name, '10px')
 
