@@ -701,5 +701,23 @@ document.addEventListener('DOMContentLoaded', () => {
   fontS(mass, '12px')
   fontS(name, '10px')
 
-});
+  // MENU
 
+  const menu = document.getElementById('menu');
+  const menuBtn = document.querySelector('.menuBtn');
+  const menuBtnLines = document.getElementById('tbcol');
+  const crossLines = document.getElementById('crossLine');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('menu');
+
+    if (menu.classList.contains('menu')) {
+      crossLines.style.display = 'block';
+      menuBtnLines.style.display = 'none';
+    } else {
+      crossLines.style.display = 'none';
+      menuBtnLines.style.display = 'flex';
+    }
+  });
+
+});
