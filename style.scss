@@ -7,6 +7,16 @@ html {
     user-select: none;
 }
 
+@keyframes selectAnim{
+    0% {
+        scale: 1;
+    }
+
+    100%{
+        scale: 1.05;
+    }
+}
+
 .tiles {
     background-color: rgba($color: #000000, $alpha: 0.4);
     min-width: 60px;
@@ -92,6 +102,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        margin-bottom: 100vh;
 
         .t2Ele {
             display: flex;
@@ -113,13 +124,13 @@ body {
         filter: drop-shadow(0 0 0 white);
 
         .key {
-            display: none;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
             .k {
-                display: none;
+                display: flex;
                 flex-direction: row;
                 gap: 5px;
                 width: 100%;
@@ -134,10 +145,20 @@ body {
                 .box {
                     width: 20px;
                     height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 15px;
+                    color: white;
                     border: 1px solid red;
                     border-radius: 10px;
                     filter: drop-shadow(0 0 5px red);
                     background-color: rgba($color: #000000, $alpha: 0.4);
+
+                    input{
+                        background-color: none;
+                        border: none;
+                    }
                 }
             }
         }
@@ -163,7 +184,7 @@ body {
             display: none;
             font-size: 20px;
             padding: 0;
-            margin-inline: 2px;
+            margin-inline: 2.1px;
         }
 
         @keyframes menuAnim {

@@ -7,6 +7,14 @@ html {
   user-select: none;
 }
 
+@keyframes selectAnim {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.05;
+  }
+}
 .tiles {
   background-color: rgba(0, 0, 0, 0.4);
   min-width: 60px;
@@ -82,6 +90,7 @@ body .table2 {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin-bottom: 100vh;
 }
 body .table2 .t2Ele {
   display: flex;
@@ -102,13 +111,13 @@ body .menu {
   filter: drop-shadow(0 0 0 white);
 }
 body .menu .key {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 body .menu .key .k {
-  display: none;
+  display: flex;
   flex-direction: row;
   gap: 5px;
   width: 100%;
@@ -122,10 +131,19 @@ body .menu .key .k:hover {
 body .menu .key .k .box {
   width: 20px;
   height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: white;
   border: 1px solid red;
   border-radius: 10px;
   filter: drop-shadow(0 0 5px red);
   background-color: rgba(0, 0, 0, 0.4);
+}
+body .menu .key .k .box input {
+  background-color: none;
+  border: none;
 }
 body .menuBtn {
   position: absolute;
@@ -147,7 +165,7 @@ body .menuBtn .fa {
   display: none;
   font-size: 20px;
   padding: 0;
-  margin-inline: 2px;
+  margin-inline: 2.1px;
 }
 @keyframes menuAnim {
   0% {

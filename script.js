@@ -198,36 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
   var lanth = document.getElementById('lan');
   var actin = document.getElementById('act');
 
-  // Function to create and append alkali elements
-
-  // function creatingElements(fName, indexNo, clsName, grpName) {
-  //   window[fName] = function(data, index) {
-  //     var newElement = document.createElement('div');
-  //     newElement.className = `tiles prd${index + indexNo} ${clsName}`;
-
-  //     ['number', 'symbol', 'name', 'mass'].forEach(function(property) {
-  //       var childElement = document.createElement('div');
-  //       childElement.className = property;
-  //       childElement.textContent = data[property];
-  //       newElement.appendChild(childElement);
-  //     });
-
-  //     console.log("Attempting to append to:", grpName);
-
-  //     // Ensure that grpName is a valid DOM element
-  //     if (grpName instanceof Element) {
-  //       grpName.appendChild(newElement);
-  //       console.log("Append successful!");
-  //     } else {
-  //       console.error("Invalid element for appending.");
-  //     }
-  //   };
-  // }  
-
-  // creatingElements('createAlkaliElement', 1, 'alkali', 'grp1');
-  // creatingElements('createAlkalineElement', 2, 'alkaline', 'grp2');
-  // creatingElements('createGroup3Element', 4, 'grp3Ele', 'grp3');
-
   function createAlkaliElement(data, index) {
     var newElement = document.createElement('div');
     newElement.className = 'tiles prd' + (index + 2) + ' alkali';
@@ -666,32 +636,27 @@ document.addEventListener('DOMContentLoaded', () => {
   var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Sn', 'Pb', 'Fl', 'Bi', 'Mc', 'Po', 'Lv']
   var unknown = ['Mt', 'Ds', 'Rg', 'Nh', 'Mc', 'Lv', 'Ts', 'Og']
 
-  const AlkaliK = document.querySelector('.AlkaliKBox');
-  const AlkalineKBox = document.querySelector('.AlkalineKBox');
-  const LanthanoidsKBox = document.querySelector('.LanthanoidsKBox');
-  const ActinoidsKBox = document.querySelector('.ActinoidsKBox');
-  const TransitionKBox = document.querySelector('.TransitionKBox');
-  const PostTransitionKBox = document.querySelector('.PostTransitionKBox');
-  const MetalloidsKBox = document.querySelector('.MetalloidsKBox');
-  const othMetalsKBox = document.querySelector('.othNonMetalKBox');
-  const NobleGasesKBox = document.querySelector('.NobleGasKBox');
-  const UnknownKBox = document.querySelector('.UnknownKBox');
-
   function boxColor(key, color) {
     key.style.borderColor = color;
     key.style.filter = `drop-shadow(0 0 5px ${color})`;
   }
 
-  boxColor(AlkaliK, 'crimson');
-  boxColor(AlkalineKBox, 'yellow');
-  boxColor(LanthanoidsKBox, 'blue');
-  boxColor(ActinoidsKBox, 'brown');
-  boxColor(TransitionKBox, 'rgb(225, 119, 34)');
-  boxColor(PostTransitionKBox, 'lime');
-  boxColor(MetalloidsKBox, 'lightskyblue');
-  boxColor(othMetalsKBox, 'greenyellow');
-  boxColor(NobleGasesKBox, 'cyan');
-  boxColor(UnknownKBox, 'gray');
+  const boxList = [
+    { name: 'AlkaliKBox', element: document.querySelector('.AlkaliKBox'), color: 'crimson' },
+    { name: 'AlkalineKBox', element: document.querySelector('.AlkalineKBox'), color: 'yellow' },
+    { name: 'LanthanoidsKBox', element: document.querySelector('.LanthanoidsKBox'), color: 'blue' },
+    { name: 'ActinoidsKBox', element: document.querySelector('.ActinoidsKBox'), color: 'brown' },
+    { name: 'TransitionKBox', element: document.querySelector('.TransitionKBox'), color: 'rgb(225, 119, 34)' },
+    { name: 'PostTransitionKBox', element: document.querySelector('.PostTransitionKBox'), color: 'lime' },
+    { name: 'MetalloidsKBox', element: document.querySelector('.MetalloidsKBox'), color: 'lightskyblue' },
+    { name: 'othMetalsKBox', element: document.querySelector('.othNonMetalKBox'), color: 'greenyellow' },
+    { name: 'NobleGasesKBox', element: document.querySelector('.NobleGasKBox'), color: 'cyan' },
+    { name: 'UnknownKBox', element: document.querySelector('.UnknownKBox'), color: 'gray' },
+  ];
+
+  boxList.forEach(({ element, color }) => {
+    boxColor(element, color);
+  });
 
   indColor(forAquamarine, 'lightskyblue');
   indColor(forLime, 'lime');
@@ -718,6 +683,53 @@ document.addEventListener('DOMContentLoaded', () => {
       crossLines.style.display = 'none';
       menuBtnLines.style.display = 'flex';
     }
+  });
+
+  // let selectAnimActive = false;
+
+  // function selectAnim(grpName) {
+  //   grpName.forEach(element => {
+  //     element.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+  //     selectAnimActive = true;
+  //   });
+  // }
+
+  // AlkaliK.addEventListener('click', () => {
+  //   tiles.forEach(tile => {
+  //     if (tile.style.borderColor === 'crimson') {
+  //       tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+  //     }
+  //   });
+  // });
+
+  tiles.forEach(tile => {
+    if (tile.style.borderColor === 'crimson') {
+      tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+    }
+  });
+
+  const keyComponents = {
+    AlkaliK: document.querySelector('.AlkaliK'),
+    AlkalineK: document.querySelector('.AlkalineK'),
+    LanthanoidsK: document.querySelector('.LanthanoidsK'),
+    ActinoidsK: document.querySelector('.ActinoidsK'),
+    TransitionK: document.querySelector('.TransitionK'),
+    PostTransitionK: document.querySelector('.PostTransitionK'),
+    MetalloidsK: document.querySelector('.MetalloidsK'),
+    othMetalsK: document.querySelector('.othNonMetalK'),
+    NobleGasesK: document.querySelector('.NobleGasK'),
+    UnknownK: document.querySelector('.UnknownK'),
+  };
+
+  Object.values(keyComponents).forEach((key, index) => {
+    key.addEventListener('click', () => {
+      const { element } = boxList[index];
+      if (element.innerHTML === '') {
+        element.innerHTML = '✔';
+      } else {
+        element.innerHTML = '';
+      }
+    });
   });
 
 });
