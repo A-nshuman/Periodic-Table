@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { number: 101, symbol: 'Md', name: 'Mendelevium', mass: '(258)' },
     { number: 102, symbol: 'No', name: 'Nobelium', mass: '(259)' },
     { number: 103, symbol: 'Lr', name: 'Lawrencium', mass: '(262)' }
-  ];  
+  ];
 
   var grp1 = document.getElementById('grp1');
   var grp2 = document.getElementById('grp2');
@@ -197,36 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
   var grp18 = document.getElementById('grp18');
   var lanth = document.getElementById('lan');
   var actin = document.getElementById('act');
-
-  // Function to create and append alkali elements
-
-  // function creatingElements(fName, indexNo, clsName, grpName) {
-  //   window[fName] = function(data, index) {
-  //     var newElement = document.createElement('div');
-  //     newElement.className = `tiles prd${index + indexNo} ${clsName}`;
-
-  //     ['number', 'symbol', 'name', 'mass'].forEach(function(property) {
-  //       var childElement = document.createElement('div');
-  //       childElement.className = property;
-  //       childElement.textContent = data[property];
-  //       newElement.appendChild(childElement);
-  //     });
-
-  //     console.log("Attempting to append to:", grpName);
-
-  //     // Ensure that grpName is a valid DOM element
-  //     if (grpName instanceof Element) {
-  //       grpName.appendChild(newElement);
-  //       console.log("Append successful!");
-  //     } else {
-  //       console.error("Invalid element for appending.");
-  //     }
-  //   };
-  // }  
-
-  // creatingElements('createAlkaliElement', 1, 'alkali', 'grp1');
-  // creatingElements('createAlkalineElement', 2, 'alkaline', 'grp2');
-  // creatingElements('createGroup3Element', 4, 'grp3Ele', 'grp3');
 
   function createAlkaliElement(data, index) {
     var newElement = document.createElement('div');
@@ -626,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function indColor(symbols, color) {
     tiles.forEach(tile => {
       const symbol = tile.querySelector('.symbol');
-  
+
       if (symbols.includes(symbol.textContent)) {
         tile.style.borderColor = color;
         tile.style.filter = `drop-shadow(0 0 5px ${color})`;
@@ -640,7 +610,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  tileColor(other, 'aquamarine')
+  tileColor(other, 'greenyellow')
   tileColor(alkali, 'crimson')
   tileColor(alkaline, 'yellow')
   tileColor(grp3Ele, 'rgb(225, 119, 34)')
@@ -654,23 +624,112 @@ document.addEventListener('DOMContentLoaded', () => {
   tileColor(grp11Ele, 'rgb(225, 119, 34)')
   tileColor(grp12Ele, 'rgb(225, 119, 34)')
   tileColor(grp13Ele, 'aquamarine')
-  tileColor(grp14Ele, 'rgb(225, 119, 34)')
-  tileColor(grp15Ele, 'rgb(225, 119, 34)')
-  tileColor(grp16Ele, 'lime')
+  tileColor(grp14Ele, 'greenyellow')
+  tileColor(grp15Ele, 'greenyellow')
+  tileColor(grp16Ele, 'greenyellow')
   tileColor(grp17Ele, 'greenyellow')
   tileColor(grp18Ele, 'cyan')
   tileColor(lanthEle, 'blue')
   tileColor(actinEle, 'brown')
 
-  var forAquamarine = ['B', 'C', 'N', 'O', 'Si', 'P', 'S', 'As', 'Se', 'Te']
-  var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Ge', 'Sn', 'Pb', 'Fl', 'Sb', 'Bi', 'Mc', 'Po', 'Lv']
-  
-  indColor(forAquamarine, 'aquamarine');
+  var forAquamarine = ['B', 'Si', 'Ge', 'As', 'Sb', 'Te', 'At']
+  var forLime = ['Al', 'Ga', 'In', 'Tl', 'Nh', 'Sn', 'Pb', 'Fl', 'Bi', 'Mc', 'Po', 'Lv']
+  var unknown = ['Mt', 'Ds', 'Rg', 'Nh', 'Mc', 'Lv', 'Ts', 'Og']
+
+  function boxColor(key, color) {
+    key.style.borderColor = color;
+    key.style.filter = `drop-shadow(0 0 5px ${color})`;
+  }
+
+  const boxList = [
+    { name: 'AlkaliKBox', element: document.querySelector('.AlkaliKBox'), color: 'crimson' },
+    { name: 'AlkalineKBox', element: document.querySelector('.AlkalineKBox'), color: 'yellow' },
+    { name: 'LanthanoidsKBox', element: document.querySelector('.LanthanoidsKBox'), color: 'blue' },
+    { name: 'ActinoidsKBox', element: document.querySelector('.ActinoidsKBox'), color: 'brown' },
+    { name: 'TransitionKBox', element: document.querySelector('.TransitionKBox'), color: 'rgb(225, 119, 34)' },
+    { name: 'PostTransitionKBox', element: document.querySelector('.PostTransitionKBox'), color: 'lime' },
+    { name: 'MetalloidsKBox', element: document.querySelector('.MetalloidsKBox'), color: 'lightskyblue' },
+    { name: 'othMetalsKBox', element: document.querySelector('.othNonMetalKBox'), color: 'greenyellow' },
+    { name: 'NobleGasesKBox', element: document.querySelector('.NobleGasKBox'), color: 'cyan' },
+    { name: 'UnknownKBox', element: document.querySelector('.UnknownKBox'), color: 'gray' },
+  ];
+
+  boxList.forEach(({ element, color }) => {
+    boxColor(element, color);
+  });
+
+  indColor(forAquamarine, 'lightskyblue');
   indColor(forLime, 'lime');
+  indColor(unknown, 'gray');
 
   fontS(number, '12px')
   fontS(mass, '12px')
   fontS(name, '10px')
 
-});
+  // MENU
 
+  const menu = document.getElementById('menu');
+  const menuBtn = document.querySelector('.menuBtn');
+  const menuBtnLines = document.getElementById('tbcol');
+  const crossLines = document.getElementById('crossLine');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('menu');
+
+    if (menu.classList.contains('menu')) {
+      crossLines.style.display = 'block';
+      menuBtnLines.style.display = 'none';
+    } else {
+      crossLines.style.display = 'none';
+      menuBtnLines.style.display = 'flex';
+    }
+  });
+
+  // let selectAnimActive = false;
+
+  // function selectAnim(grpName) {
+  //   grpName.forEach(element => {
+  //     element.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+  //     selectAnimActive = true;
+  //   });
+  // }
+
+  // AlkaliK.addEventListener('click', () => {
+  //   tiles.forEach(tile => {
+  //     if (tile.style.borderColor === 'crimson') {
+  //       tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+  //     }
+  //   });
+  // });
+
+  tiles.forEach(tile => {
+    if (tile.style.borderColor === 'crimson') {
+      tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+    }
+  });
+
+  const keyComponents = {
+    AlkaliK: document.querySelector('.AlkaliK'),
+    AlkalineK: document.querySelector('.AlkalineK'),
+    LanthanoidsK: document.querySelector('.LanthanoidsK'),
+    ActinoidsK: document.querySelector('.ActinoidsK'),
+    TransitionK: document.querySelector('.TransitionK'),
+    PostTransitionK: document.querySelector('.PostTransitionK'),
+    MetalloidsK: document.querySelector('.MetalloidsK'),
+    othMetalsK: document.querySelector('.othNonMetalK'),
+    NobleGasesK: document.querySelector('.NobleGasK'),
+    UnknownK: document.querySelector('.UnknownK'),
+  };
+
+  Object.values(keyComponents).forEach((key, index) => {
+    key.addEventListener('click', () => {
+      const { element } = boxList[index];
+      if (element.innerHTML === '') {
+        element.innerHTML = '✔';
+      } else {
+        element.innerHTML = '';
+      }
+    });
+  });
+
+});

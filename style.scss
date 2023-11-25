@@ -2,6 +2,19 @@ html {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@keyframes selectAnim{
+    0% {
+        scale: 1;
+    }
+
+    100%{
+        scale: 1.05;
+    }
 }
 
 .tiles {
@@ -29,7 +42,7 @@ html {
             transform: rotate(0.01turn);
         }
 
-        50%{
+        50% {
             scale: 1.15;
             transform: rotate(0turn);
         }
@@ -89,11 +102,132 @@ body {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        margin-bottom: 100vh;
 
         .t2Ele {
             display: flex;
             flex-direction: row;
             gap: 5px;
+        }
+    }
+
+    .menu {
+        display: flex;
+        position: absolute;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        backdrop-filter: blur(5px);
+        z-index: 999;
+        top: 70px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 0 white);
+
+        .key {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .k {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                width: 100%;
+                padding: 5px;
+                border-radius: 10px;
+                transition: 0.2s all ease-in-out;
+
+                &:hover {
+                    background-color: rgba($color: #ffff, $alpha: 0.3);
+                }
+
+                .box {
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 15px;
+                    color: white;
+                    border: 1px solid red;
+                    border-radius: 10px;
+                    filter: drop-shadow(0 0 5px red);
+                    background-color: rgba($color: #000000, $alpha: 0.4);
+
+                    input{
+                        background-color: none;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .menuBtn {
+        position: absolute;
+        top: 20px;
+        width: 20px;
+        overflow: hidden;
+        right: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgba($color: #ffff, $alpha: 0.4);
+        animation: menuAnim 0.2s ease-in-out forwards;
+
+        .fa{
+            display: none;
+            font-size: 20px;
+            padding: 0;
+            margin-inline: 2.1px;
+        }
+
+        @keyframes menuAnim {
+            0% {
+                width: 53.96px;
+            }
+
+            100% {
+                width: 20px;
+            }
+        }
+
+        &:hover {
+            animation: menuBtnAnim 0.2s ease-in-out forwards;
+
+            @keyframes menuBtnAnim {
+                0% {
+                    width: 20px;
+                }
+
+                100% {
+                    width: 53.96px;
+                }
+            }
+        }
+
+        .menuBtnText {
+            display: block;
+        }
+
+        .tbcol {
+            display: flex;
+            flex-direction: column;
+            width: 20px;
+            gap: 4px;
+
+            .menuBtnLine {
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                border-radius: 10px;
+                min-width: 20px;
+            }
         }
     }
 }
