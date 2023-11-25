@@ -685,29 +685,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // let selectAnimActive = false;
-
-  // function selectAnim(grpName) {
-  //   grpName.forEach(element => {
-  //     element.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
-  //     selectAnimActive = true;
-  //   });
-  // }
-
-  // AlkaliK.addEventListener('click', () => {
-  //   tiles.forEach(tile => {
-  //     if (tile.style.borderColor === 'crimson') {
-  //       tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
-  //     }
-  //   });
-  // });
-
-  tiles.forEach(tile => {
-    if (tile.style.borderColor === 'crimson') {
-      tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
-    }
-  });
-
   const keyComponents = {
     AlkaliK: document.querySelector('.AlkaliK'),
     AlkalineK: document.querySelector('.AlkalineK'),
@@ -721,13 +698,35 @@ document.addEventListener('DOMContentLoaded', () => {
     UnknownK: document.querySelector('.UnknownK'),
   };
 
+  let activeKey = false;
+  let lastClickedColor = {};
+
   Object.values(keyComponents).forEach((key, index) => {
     key.addEventListener('click', () => {
       const { element } = boxList[index];
+      const { color } = boxList[index];
+
       if (element.innerHTML === '') {
         element.innerHTML = '✔';
-      } else {
+        activeKey = true;
+        lastClickedColor[index] = color;
+
+        tiles.forEach(tile => {
+          if (tile.style.borderColor === color) {
+            tile.style.animation = 'selectAnim 0.5s ease-in-out infinite alternate';
+          }
+        });
+      }
+      
+      else if (element.innerHTML === '✔') {
         element.innerHTML = '';
+        activeKey = false;
+
+        tiles.forEach(tile => {
+          if (tile.style.borderColor === lastClickedColor[index]) {
+            tile.style.animation = '';
+          }
+        });
       }
     });
   });

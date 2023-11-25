@@ -10,10 +10,12 @@ html {
 @keyframes selectAnim{
     0% {
         scale: 1;
+        transform: rotate(1deg);
     }
 
     100%{
         scale: 1.05;
+        transform: rotate(-1deg);
     }
 }
 
@@ -103,6 +105,7 @@ body {
         flex-direction: column;
         gap: 5px;
         margin-bottom: 100vh;
+        align-items: flex-start;
 
         .t2Ele {
             display: flex;

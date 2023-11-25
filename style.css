@@ -10,9 +10,11 @@ html {
 @keyframes selectAnim {
   0% {
     scale: 1;
+    transform: rotate(1deg);
   }
   100% {
     scale: 1.05;
+    transform: rotate(-1deg);
   }
 }
 .tiles {
@@ -91,6 +93,7 @@ body .table2 {
   flex-direction: column;
   gap: 5px;
   margin-bottom: 100vh;
+  align-items: flex-start;
 }
 body .table2 .t2Ele {
   display: flex;
