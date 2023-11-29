@@ -28,3 +28,7 @@ The Periodic Table Project is a visually appealing representation of the periodi
 | Other Metals (Non-Metal)   | Greenyellow    |
 | Noble Gases                | Cyan           |
 | Unknown                    | Gray           |
+
+## Preview
+
+![Screenshot](images/screenshot.jpeg)
